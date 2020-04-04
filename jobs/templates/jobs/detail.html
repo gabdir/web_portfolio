@@ -47,33 +47,14 @@
   <main role="main">
   <section class="jumbotron text-center">
     <div class="container">
-      <h1>Aydar Gabdrahmanov</h1>
-      <p class="lead text-muted">Hello! My name is Aydar. I am really enjoy in web development.</p>
+      <h1>Job Detail</h1>
+      <p class="lead text-muted">{{ job.summary }}</p>
+      <img src="{{ job.image.url }}" height=300></img>
       <p>
-        <a href="mailto:a.gabdrahmanov2312@yandex.ru" class="btn btn-primary my-2">Email me</a>
-        <a href="https://github.com/gabdir" class="btn btn-secondary my-2">Github</a>
+        <a href="{% url 'home' %}" class="btn btn-primary my-2">Back</a>
       </p>
-      <img src="{% static 'Me.jpg' %}" height=300></img>
     </div>
   </section>
-  <div class="album py-5 bg-light">
-    <div class="container">
-      <div class="row">
-        {% for job in jobs %}
-        <div class="col-md-4">
-          <a href="{% url 'detail' job.id %}">
-            <div class="card mb-4 shadow-sm">
-              <img class="card-img-top" src="{{ job.image.url }}">
-              <div class="card-body">
-                <p class="card-text">{{ job.summary }}</p>
-              </div>
-            </div>
-          </a>
-        </div>
-       {% endfor %}
-      </div>
-    </div>
-  </div>
 </main>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
